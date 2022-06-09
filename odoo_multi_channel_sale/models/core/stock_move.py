@@ -115,7 +115,7 @@ class StockMove(models.Model):
                 channel  = instance.channel
                 if channel in channel_list:
                     location_id = instance.location_id.id
-                    location_ids = self.env["stock.location"].search([("id", "child_of", location_id)]
+                    location_ids = self.env["stock.location"].search([("id", "child_of", location_id)])
                     if instance.auto_sync_stock:
                     #### Changement oxilia-info ####                    
                         # if pick_details.get('source_loc_id') == location_id or \
