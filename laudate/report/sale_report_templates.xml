@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="laudate_inherit_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//th[@name='th_subtotal']" position="after">
+        <th name="th_total" class="text-right"><strong>Total TTC</strong></th>
+    </xpath>
+
+    <xpath expr="//td[@name='td_subtotal']" position="after">
+        <td name="td_total" class="text-right o_price_total">
+            <span t-field="line.price_total"/>
+        </td>
+    </xpath>
+</template>
+
+</odoo>

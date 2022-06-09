@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="report_invoice_document_with_payments_inherit" inherit_id="account.report_invoice_document_with_payments">
+        <xpath expr="//i[hasclass('oe_payment_label')]" position="replace">        
+        
+            <i class="oe_form_field text-right oe_payment_label">Payé le 
+                <t t-esc="payment_vals['date']" t-options='{"widget": "date"}'/>
+                <span class="oe_form_field" style="margin-right: 30px;"> en <t t-esc="payment_vals['journal_name']"/></span>
+            </i>
+        
+        </xpath>
+    </template>
+      
+    <template id="report_invoice_document_inherit_laudate" inherit_id="account.report_invoice_document">
+        <xpath expr="//address[@t-field='o.partner_id']" position="replace">
+            <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone", "mobile", "email"], "no_marker": True, "phone_icons": True}' />
+        </xpath>
+      
+        <xpath expr="//div[@id='total']/div/table" position="inside">
+            <t t-set="payments_vals" t-value="o.sudo().pos_order_ids.payment_ids"/>
+                <t t-foreach="payments_vals" t-as="payment_vals">
+                    <tr>
+                        <td>
+                            <t t-esc="payment_vals.payment_date" t-options='{"widget": "date"}'/>
+                            <span class="oe_form_field" style="margin-right: 30px;"> en <t t-esc="payment_vals.payment_method_id.name"/></span>
+                        </td>
+                        <td class="text-right">
+                            <span t-esc="payment_vals.amount" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                        </td>
+                    </tr>
+                </t>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']//th[@name='th_subtotal']" position="replace">
+            <th name="th_subtotal" class="text-right">
+                <span>Sous-total</span>
+            </th>
+            <th name="th_total" class="text-right">
+                <span>Total</span>
+            </th>
+        </xpath>
+      
+        <xpath expr="//table[@name='invoice_line_table']//tbody//td[hasclass('text-right','o_price_total')]" position="replace">
+            <td class="text-right o_price_total">
+                <span class="text-nowrap" t-field="line.price_subtotal"/>
+            </td>
+            <td class="text-right o_price_total">
+                <span class="text-nowrap" t-field="line.price_total"/>
+            </td>
+        </xpath>
+    </template>
+    
+    
+  </data>
+</odoo>

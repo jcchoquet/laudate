@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="prestashop_odoo_bridge.multi_channel_view_form" model="ir.ui.view">
+        <field name="name">multi.channel.sale.inherited</field>
+        <field name="model">multi.channel.sale</field>
+        <field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_form" />
+        <field name="arch" type="xml">
+                <group name="credentials" position="inside">
+                    <group attrs="{'invisible':[('channel','!=', 'prestashop')]}">
+                        <field name="prestashop_base_uri" widget="url" placeholder="http://{prestashop-store-url}/api" attrs="{'required':[('channel','==', 'prestashop')],'readonly':[('state','=', 'validate')]}" />
+                        <field name="prestashop_api_key" password="True" attrs="{'required':[('channel','==', 'prestashop')],'readonly':[('state','=', 'validate')]}" />
+                    </group>
+                </group>
+                <xpath expr="//page[@name = 'configuration']" position="after">
+                    <page string="Prestashop" name="prestashop" attrs="{'invisible':[('channel','!=', 'prestashop')]}">
+                        <group string="Default Settings">
+                            <group>
+                                <field name="ps_default_tax_rule_id" attrs="{'readonly':[('state','=', 'validate')]}" />
+                                <field name="ps_default_product_type" />
+                            </group>
+                            <group>
+                                <field name="default_tax_type" attrs="{'readonly':[('state','=', 'validate')]}" />
+                                <field name="ps_language_id" attrs="{'required':[('channel','=', 'prestashop')]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

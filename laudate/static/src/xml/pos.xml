@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="OrderReceipt">
+        <t t-jquery=".pos-receipt-logo" t-operation="replace">
+            <h2 class="pos-receipt-center-align">
+                <t t-esc='receipt.company.name' />
+            </h2>
+        </t>
+                
+        <t t-jquery=".cashier" t-operation="replace">
+        </t>
+                
+        <t t-jquery=".pos-receipt-order-data" t-operation="before">
+            <div class="pos-receipt-contact">
+                <t t-if='receipt.client'>
+                    <div>Client:<t t-esc='receipt.client' /></div>
+                </t>
+            </div>
+        </t>
+    </t>
+    
+    <t t-extend="Product">
+        <t t-jquery=".price-tag" t-operation="replace">
+            <span class="price-tag">
+                <t t-esc="widget.format_currency(product.get_price(pricelist, 1)*1.2,'Product Price')"/>
+            </span>
+        </t>
+    </t>
+    
+</templates>

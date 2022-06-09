@@ -1,0 +1,155 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* laudate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-10 14:30+0000\n"
+"PO-Revision-Date: 2020-08-10 16:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_pos_payment_method__bank_journal_id
+msgid "Bank Journal"
+msgstr "Journal de banque"
+
+#. module: laudate
+#: model:ir.model.fields.selection,name:laudate.selection__sale_order__state_picking__cancel
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: laudate
+#. openerp-web
+#: code:addons/laudate/static/src/xml/pos.xml:0
+#, python-format
+msgid "Client:"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report__date
+msgid "Date"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report__display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: laudate
+#: model:ir.model.fields.selection,name:laudate.selection__sale_order__state_picking__done
+msgid "Done"
+msgstr "Fait"
+
+#. module: laudate
+#: model:ir.model.fields.selection,name:laudate.selection__sale_order__state_picking__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report__id
+msgid "ID"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_sale_order__store_order_id
+msgid "Id Commande Site"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_payment_report
+msgid "Payment Report"
+msgstr "Rapport de paiement"
+
+#. module: laudate
+#: model_terms:ir.ui.view,arch_db:laudate.report_invoice_document_with_payments_inherit
+msgid "Payé le"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_pos_payment_method
+msgid "Point of Sale Payment Methods"
+msgstr "Modes de paiement au point de vente"
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_product_pricelist_item
+msgid "Pricelist Rule"
+msgstr "Règle des listes des prix"
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_product_template_attribute_value
+msgid "Product Template Attribute Value"
+msgstr "Valeur caratéristique du modèle produit"
+
+#. module: laudate
+#: model:ir.model.fields.selection,name:laudate.selection__sale_order__state_picking__assigned
+msgid "Ready"
+msgstr "Prêt"
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_product_pricelist_item__default_code
+msgid "Référence interne"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model,name:laudate.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_sale_order__state_picking
+msgid "Statut BL"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report__user_id
+msgid "User"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields.selection,name:laudate.selection__sale_order__state_picking__confirmed
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: laudate
+#: model:ir.model.fields.selection,name:laudate.selection__sale_order__state_picking__waiting
+msgid "Waiting Another Operation"
+msgstr "En attente d'une autre opération"
+
+#. module: laudate
+#: model_terms:ir.ui.view,arch_db:laudate.report_invoice_document_with_payments_inherit
+msgid "en"
+msgstr ""
+
+#. module: laudate
+#: model:ir.model.fields,field_description:laudate.field_payment_report__amount
+msgid "montant"
+msgstr ""

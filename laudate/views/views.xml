@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="laudate.list">
+      <field name="name">laudate list</field>
+      <field name="model">laudate.laudate</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="laudate.action_window">
+      <field name="name">laudate window</field>
+      <field name="res_model">laudate.laudate</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="laudate.action_server">
+      <field name="name">laudate server</field>
+      <field name="model_id" ref="model_laudate_laudate"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="laudate" id="laudate.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="laudate.menu_1" parent="laudate.menu_root"/>
+    <menuitem name="Menu 2" id="laudate.menu_2" parent="laudate.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="laudate.menu_1_list" parent="laudate.menu_1"
+              action="laudate.action_window"/>
+    <menuitem name="Server to list" id="laudate" parent="laudate.menu_2"
+              action="laudate.action_server"/>
+-->
+  </data>
+</odoo>

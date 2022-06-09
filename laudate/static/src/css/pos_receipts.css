@@ -1,0 +1,13 @@
+.pos-receipt-print {
+    width: 512px;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+    direction: ltr;
+    font-size: 28px;
+    color: #000000;
+    font-family: Futura, HelveticaNeue, Helvetica, Arial, "Lucida Grande", sans-serif;
+}

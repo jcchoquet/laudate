@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<record id="product_product_tree_view" model="ir.ui.view">
+            <field name="name">product.product.tree</field>
+            <field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="lst_price" position="replace">
+					<field name="lst_price" optional="hide"/>
+					<field name="price_ttc"/>
+				</field>
+                
+            </field>
+        </record>
+		
+		<record id="product_normal_form_view" model="ir.ui.view">
+            <field name="name">product.product.form.laudate</field>
+            <field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="before">
+					<field name="price_make"/>					
+				</field>
+                
+            </field>
+        </record>
+		
+		<record id="laudate_product_supplierinfo_tree_view" model="ir.ui.view">
+            <field name="name">laudate.product.supplierinfo.tree.view</field>
+            <field name="model">product.supplierinfo</field>
+			<field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+            <field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="product_code"/>
+				</field>
+			</field>
+        </record>
+		
+	</data>
+</odoo>

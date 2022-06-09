@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+  <record model="ir.cron" id="product_standard_price">
+    <field name="name">Calcul prix achat en fonction cours Or</field>
+    <field name="model_id" ref="product.model_product_product"/>
+    <field name="state">code</field>
+    <field name="code">model.compute_standard_price_gold()</field>
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+    <field name="numbercall">-1</field>
+    <field name="doall" eval="False"/>
+    <field name="nextcall" eval="(DateTime.now().replace(hour=7, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+  </record>
+</odoo>

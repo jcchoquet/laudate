@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="report_product_label_wizard" model="ir.actions.report">
+        <field name="name">Etiquette_articles</field>
+        <field name="model">product.product</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">laudate.report_productlabel_wizard</field>
+        <field name="report_file">laudate.report_productlabel_wizard</field>
+        <field name="binding_model_id" eval="False"/>
+    </record>
+      <template id="report_productlabel_wizard">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="product">
+                        <t t-call="laudate.report_simple_label_wizard">
+                            <t t-set="product" t-value="product"/>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+        <template id="report_simple_label_wizard">
+
+          <div style="width: 25%; display: inline-table;">
+  					<table class="table table-bordered mb-0" style="line-height: 0.5;">
+
+  						<tr>
+  							<td class="text-center align-middle">
+  								<t t-if="product.barcode">
+  									<img alt="Barcode" t-if="len(product.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(product.barcode or ''), 600, 80)" style="width:100%;height::1rem;"/>
+  									<img alt="Barcode" t-elif="len(product.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(product.barcode or ''), 600, 80)" style="width:100%;height::1rem;"/>
+  									<img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(product.barcode or ''), 600, 80)" style="width:100%;height::2rem;"/>
+  									<!-- <span t-field="product.barcode"/> -->
+  								</t>
+  								<t t-else=""><span class="text-muted">No barcode available</span></t>
+  							</td>
+  						</tr>
+  						<tr>
+  							<th class="table-active text-left">
+  								<strong t-field="product.name"/>
+  							</th>
+  						</tr>
+  						<tr>
+  							<td class="text-center align-middle">
+                  <strong t-field="product.default_code"/>
+  							</td>
+  						</tr>
+  					</table>
+  				</div>
+        </template>
+
+
+        <template id="report_simple_label" inherit_id="product.report_simple_label">
+            <xpath expr="//div" position="replace">
+				<div style="width: 25%; display: inline-table;">
+					<table class="table table-bordered mb-0" style="line-height: 0.5;">
+
+						<tr>
+							<td class="text-center align-middle">
+								<t t-if="product.barcode">
+									<img alt="Barcode" t-if="len(product.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(product.barcode or ''), 600, 80)" style="width:100%;height::1rem;"/>
+									<img alt="Barcode" t-elif="len(product.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(product.barcode or ''), 600, 80)" style="width:100%;height::1rem;"/>
+									<img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(product.barcode or ''), 600, 80)" style="width:100%;height::2rem;"/>
+									<!-- <span t-field="product.barcode"/> -->
+								</t>
+								<t t-else=""><span class="text-muted">No barcode available</span></t>
+							</td>
+						</tr>
+						<tr>
+							<th class="table-active text-left">
+								<strong t-field="product.name"/>
+							</th>
+						</tr>
+						<tr>
+							<td class="text-center align-middle">
+								<strong t-esc="'{0:,.2f}'.format(round(product.with_context(pricelist='Liste de prix publique').price *1.2,2))"/> Eur
+							</td>
+						</tr>
+					</table>
+				</div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

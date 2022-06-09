@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ProductCategoriesWidget">
+        <t t-jquery='.searchbox' t-operation='before'>
+            <t t-if="widget.pos.config.allow_exact_search">
+                <div class="searchbox2" style="right: 174px;position: absolute;">
+                    <input placeholder="Exact Search" style='width: 100px;
+                                                            border: 1px solid #cecbcb;
+                                                            padding: 10px 20px;
+                                                            padding-left: 38px;
+                                                            margin: 6px;
+                                                            background: url(/point_of_sale/static/src/css/../img/search.png) no-repeat 15px;
+                                                            background-color: white;
+                                                            border-radius: 20px;
+                                                            font-family: "Lato","Lucida Grande", Helvetica, Verdana, Arial;
+                                                            font-size: 13px'/>
+                    <span class="search-clear"></span>
+                </div>
+            </t>
+        </t>
+    </t>  
+</templates>

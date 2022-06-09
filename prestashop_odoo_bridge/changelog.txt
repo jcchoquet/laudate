@@ -1,0 +1,32 @@
+Legend
+
++ Features
+- Bugs
+
+Date dd-mm-yyyy
+
+	------------------------------ Version 1.6.0 (01-06-2020) --------------------------------
+	+ [Fix] creating product feeds while importing orders.
+	
+	------------------------------ Version 1.6.0 (04-06-2020) --------------------------------
+	+ [FIX] import_operation.xml file
+	+ [FIX] added action_prestashop_export_template method
+	+ [FIX] added shipping line in order feeds.
+	+ [FIX] changed the filter method in import process.
+
+	------------------------------ Version 1.6.0 (05-06-2020) --------------------------------
+	+ [ADD] tax name while importing taxes instead of VAT.
+	+ [ADD] import category while importing products.
+	
+	------------------------------ Version 1.6.0 (08-06-2020) --------------------------------
+	+ [REM] decrease the number of API calls.
+	+ [ADD] API limit functionality with import process.
+	
+	------------------------------ Version 1.6.0 (09-06-2020) ---------------------------------
+	+ [ADD] remove single line type from import_order.py file.
+	------------------------------Version 1.6.0 (22-06-2020) ----------------------------------
+	+ [ADD] import date updation for cron processes.
+	------------------------------ Version 1.6.0 (25-06-2020) --------------------------------
+	+[ADD] description to import attributes and import products
+	+[ADD] try except statement to API calls in import partner.
+ 
