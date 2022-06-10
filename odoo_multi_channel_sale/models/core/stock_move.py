@@ -122,7 +122,7 @@ class StockMove(models.Model):
                             # pick_details.get('location_dest_id') == location_id:
                         _logger.info("location_ids %r",location_ids)
                         _logger.info("location_id %r",location_id)
-                        if pick_details.get('source_loc_id') in location_ids or pick_details.get('location_dest_id') in location_ids:
+                        if pick_details.get('source_loc_id') in location_ids.ids or pick_details.get('location_dest_id') in location_ids.ids:
                             qty = instance.with_context(location=location_id).get_quantity(variant)
                         else:
                             break
