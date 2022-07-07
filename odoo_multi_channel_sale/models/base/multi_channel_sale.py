@@ -283,7 +283,7 @@ class MultiChannelSale(models.Model):
         help='Warehouse used for imported product.',
     )
     location_id = fields.Many2one(
-        related='warehouse_id.lot_stock_id',
+        comodel_name='stock.location',
         string='Stock Location',
         help='Stock Location used for imported product.',
     )
